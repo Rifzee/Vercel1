@@ -62,18 +62,24 @@ app = FastAPI(title="AI Resume Reviewer API")
 
 
 # 6. Mengatur CORS agar frontend bisa mengakses backend
+FRONTEND_URL = os.getenv("FRONTEND_URL")
+
+allowed_origins = [
+    "http://127.0.0.1:5500",
+    "http://localhost:5500",
+    "https://ariefmulyawan.github.io",
+]
+
+if FRONTEND_URL:
+    allowed_origins.append(FRONTEND_URL)
+
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=[
-        "http://127.0.0.1:5500",
-        "http://localhost:5500",
-        "https://ariefmulyawan.github.io",
-        ],
-    allow_credentials=True,
+    allow_origins=allowed_origins,
+    allow_credentials=False,
     allow_methods=["*"],
     allow_headers=["*"],
 )
-
 
 # 7. Endpoint untuk mengecek apakah API hidup
 @app.get("/")
