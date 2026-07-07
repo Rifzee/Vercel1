@@ -8,7 +8,7 @@
 // =====================
 const API_BASE_URL = window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1'
     ? 'http://localhost:8000'
-    : 'https://vercel1-ruddy-xi.vercel.app/';  // same-origin in production
+    : 'vercel1-xi-sandy.vercel.app';  // same-origin in production
 
 const MAX_FILE_SIZE = 10 * 1024 * 1024; // 10 MB
 const ALLOWED_EXTENSIONS = ['.pdf'];
