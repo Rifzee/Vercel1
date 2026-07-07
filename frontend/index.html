@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Resume Reviewer — Powered by NVIDIA Nemotron</title>
+    <meta name="description" content="Review resume Anda secara instan dengan AI. Dapatkan skor, feedback detail, dan saran perbaikan untuk meningkatkan peluang diterima kerja.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Animated Background -->
+    <div class="bg-animation">
+        <div class="bg-orb bg-orb-1"></div>
+        <div class="bg-orb bg-orb-2"></div>
+        <div class="bg-orb bg-orb-3"></div>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <a href="#" class="nav-logo">
+                <span class="logo-icon">✦</span>
+                <span class="logo-text">ResumeAI</span>
+            </a>
+            <div class="nav-links">
+                <a href="#features" class="nav-link">Fitur</a>
+                <a href="#upload" class="nav-link">Review</a>
+                <a href="#" class="nav-link nav-cta" onclick="scrollToUpload(event)">Mulai Gratis</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero" id="hero">
+        <div class="hero-content">
+            <div class="hero-badge">
+                <span class="badge-dot"></span>
+                Powered by NVIDIA Nemotron AI
+            </div>
+            <h1 class="hero-title">
+                Review Resume Anda dengan
+                <span class="gradient-text">Kecerdasan AI</span>
+            </h1>
+            <p class="hero-subtitle">
+                Upload resume Anda dan dapatkan analisis mendalam dalam hitungan detik.
+                Skor ATS, feedback profesional, dan saran perbaikan — semua powered by AI terdepan.
+            </p>
+            <div class="hero-actions">
+                <button class="btn btn-primary btn-glow" onclick="scrollToUpload(event)">
+                    <span>Upload Resume</span>
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M5 12h14M12 5l7 7-7 7"/>
+                    </svg>
+                </button>
+                <button class="btn btn-ghost" onclick="document.getElementById('features').scrollIntoView({behavior:'smooth'})">
+                    Pelajari Lebih Lanjut
+                </button>
+            </div>
+            <div class="hero-stats">
+                <div class="stat">
+                    <span class="stat-number" data-count="10000">0</span>
+                    <span class="stat-label">Resume Reviewed</span>
+                </div>
+                <div class="stat-divider"></div>
+                <div class="stat">
+                    <span class="stat-number" data-count="95">0</span><span class="stat-suffix">%</span>
+                    <span class="stat-label">Akurasi AI</span>
+                </div>
+                <div class="stat-divider"></div>
+                <div class="stat">
+                    <span class="stat-number" data-count="30">0</span><span class="stat-suffix">dtk</span>
+                    <span class="stat-label">Waktu Review</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="features" id="features">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">Fitur Unggulan</span>
+                <h2 class="section-title">Analisis Resume <span class="gradient-text">Komprehensif</span></h2>
+                <p class="section-desc">AI kami menganalisis setiap aspek resume Anda dengan standar industri terkini</p>
+            </div>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon feature-icon-1">
+                        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M7 7h10M7 12h10M7 17h6"/></svg>
+                    </div>
+                    <h3>Format & Layout</h3>
+                    <p>Evaluasi struktur, konsistensi formatting, dan keterbacaan dokumen Anda</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon feature-icon-2">
+                        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 20V10M18 20V4M6 20v-4"/></svg>
+                    </div>
+                    <h3>Content Quality</h3>
+                    <p>Analisis relevansi skill, deskripsi pekerjaan, dan penggunaan bahasa profesional</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon feature-icon-3">
+                        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><polygon points="12,2 15.09,8.26 22,9.27 17,14.14 18.18,21.02 12,17.77 5.82,21.02 7,14.14 2,9.27 8.91,8.26"/></svg>
+                    </div>
+                    <h3>Impact & Achievements</h3>
+                    <p>Deteksi pencapaian terukur, action verbs, dan demonstrasi dampak nyata</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon feature-icon-4">
+                        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M9 3H5a2 2 0 00-2 2v4m6-6h10a2 2 0 012 2v4M9 3v18m0 0h10a2 2 0 002-2v-4M9 21H5a2 2 0 01-2-2v-4m0 0h18"/></svg>
+                    </div>
+                    <h3>ATS Compatibility</h3>
+                    <p>Optimasi untuk Applicant Tracking System agar resume lolos filter otomatis</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Upload Section -->
+    <section class="upload-section" id="upload">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">Mulai Review</span>
+                <h2 class="section-title">Upload <span class="gradient-text">Resume Anda</span></h2>
+                <p class="section-desc">Drag & drop atau klik untuk upload. Mendukung PDF, DOCX, dan TXT.</p>
+            </div>
+
+            <div class="upload-card" id="uploadCard">
+                <div class="upload-form" id="uploadForm">
+                    <!-- Job Title Input -->
+                    <div class="input-group">
+                        <label for="jobTitle" class="input-label">
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 7V5a2 2 0 00-2-2h-4a2 2 0 00-2 2v2"/></svg>
+                            Target Posisi <span class="optional-tag">(opsional)</span>
+                        </label>
+                        <input type="text" id="jobTitle" class="input-field" placeholder="contoh: Software Engineer, Data Analyst, Product Manager">
+                    </div>
+
+                    <!-- Drop Zone -->
+                    <div class="drop-zone" id="dropZone">
+                        <div class="drop-zone-content">
+                            <div class="upload-icon-wrapper">
+                                <svg class="upload-icon" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                                    <path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/>
+                                    <polyline points="17 8 12 3 7 8"/>
+                                    <line x1="12" y1="3" x2="12" y2="15"/>
+                                </svg>
+                            </div>
+                            <p class="drop-zone-text">Drag & drop resume di sini</p>
+                            <p class="drop-zone-subtext">atau klik untuk browse file</p>
+                            <div class="file-types">
+                                <span class="file-badge">PDF</span>
+                                <span class="file-badge">DOCX</span>
+                                <span class="file-badge">TXT</span>
+                                <span class="file-badge">Max 10MB</span>
+                            </div>
+                        </div>
+                        <input type="file" id="fileInput" accept=".pdf,.docx,.txt" hidden>
+                    </div>
+
+                    <!-- File Info (hidden initially) -->
+                    <div class="file-info" id="fileInfo" style="display: none;">
+                        <div class="file-info-content">
+                            <div class="file-icon-wrapper">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+                            </div>
+                            <div class="file-details">
+                                <span class="file-name" id="fileName"></span>
+                                <span class="file-size" id="fileSize"></span>
+                            </div>
+                            <button class="file-remove" id="fileRemove" title="Hapus file">
+                                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Submit Button -->
+                    <button class="btn btn-primary btn-submit btn-glow" id="submitBtn" disabled>
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10"/></svg>
+                        <span>Analisis Resume</span>
+                    </button>
+                </div>
+
+                <!-- Loading State -->
+                <div class="loading-state" id="loadingState" style="display: none;">
+                    <div class="loading-spinner">
+                        <div class="spinner-ring"></div>
+                        <div class="spinner-ring spinner-ring-2"></div>
+                        <div class="spinner-brain">🧠</div>
+                    </div>
+                    <h3 class="loading-title">AI Sedang Menganalisis...</h3>
+                    <p class="loading-text" id="loadingText">Membaca dan mengekstrak teks dari resume Anda</p>
+                    <div class="loading-steps">
+                        <div class="loading-step active" id="step1">
+                            <div class="step-dot"></div>
+                            <span>Membaca dokumen</span>
+                        </div>
+                        <div class="loading-step" id="step2">
+                            <div class="step-dot"></div>
+                            <span>Menganalisis konten</span>
+                        </div>
+                        <div class="loading-step" id="step3">
+                            <div class="step-dot"></div>
+                            <span>Menyiapkan feedback</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Results Section (hidden initially) -->
+    <section class="results-section" id="resultsSection" style="display: none;">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">Hasil Analisis</span>
+                <h2 class="section-title">Review <span class="gradient-text">Resume Anda</span></h2>
+            </div>
+
+            <!-- Overall Score -->
+            <div class="score-hero" id="scoreHero">
+                <div class="score-ring-container">
+                    <svg class="score-ring" viewBox="0 0 200 200">
+                        <circle class="score-ring-bg" cx="100" cy="100" r="85"/>
+                        <circle class="score-ring-fill" id="scoreRingFill" cx="100" cy="100" r="85" 
+                            stroke-dasharray="534" stroke-dashoffset="534"/>
+                    </svg>
+                    <div class="score-value">
+                        <span class="score-number" id="overallScore">0</span>
+                        <span class="score-max">/100</span>
+                    </div>
+                </div>
+                <div class="score-info">
+                    <h3 class="score-label" id="scoreLabel">Menghitung...</h3>
+                    <p class="score-summary" id="scoreSummary"></p>
+                    <button class="btn btn-ghost btn-sm" onclick="scrollToUpload(event)">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M1 4v6h6M23 20v-6h-6"/><path d="M20.49 9A9 9 0 005.64 5.64L1 10m22 4l-4.64 4.36A9 9 0 013.51 15"/></svg>
+                        Review Resume Lain
+                    </button>
+                </div>
+            </div>
+
+            <!-- Category Scores -->
+            <div class="categories-grid" id="categoriesGrid">
+                <!-- Filled dynamically by JS -->
+            </div>
+
+            <!-- Strengths, Weaknesses, Suggestions -->
+            <div class="feedback-grid">
+                <div class="feedback-card feedback-strengths" id="strengthsCard">
+                    <div class="feedback-header">
+                        <span class="feedback-icon">✅</span>
+                        <h3>Kelebihan</h3>
+                    </div>
+                    <ul class="feedback-list" id="strengthsList"></ul>
+                </div>
+                <div class="feedback-card feedback-weaknesses" id="weaknessesCard">
+                    <div class="feedback-header">
+                        <span class="feedback-icon">⚠️</span>
+                        <h3>Kelemahan</h3>
+                    </div>
+                    <ul class="feedback-list" id="weaknessesList"></ul>
+                </div>
+                <div class="feedback-card feedback-suggestions" id="suggestionsCard">
+                    <div class="feedback-header">
+                        <span class="feedback-icon">💡</span>
+                        <h3>Saran Perbaikan</h3>
+                    </div>
+                    <ul class="feedback-list" id="suggestionsList"></ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <span class="logo-icon">✦</span>
+                    <span class="logo-text">ResumeAI</span>
+                </div>
+                <p class="footer-text">Powered by NVIDIA Nemotron 3 Super · Built with FastAPI</p>
+                <p class="footer-copyright">© 2026 AI Resume Reviewer. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Error Toast -->
+    <div class="toast" id="errorToast" style="display: none;">
+        <div class="toast-content">
+            <span class="toast-icon">❌</span>
+            <span class="toast-message" id="toastMessage"></span>
+            <button class="toast-close" onclick="hideToast()">✕</button>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
